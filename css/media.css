@@ -1,0 +1,236 @@
+
+@media (max-width: 576px) {
+
+    .modal-body img {
+      padding-bottom: 2rem;
+    }
+
+    .gameOptions {
+      margin-top: 2rem;
+      border: 6px solid hsl(217, 16%, 45%);
+    }
+
+    .gameplay {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .options {
+      display: none;
+      padding: 1rem 1rem 0.5rem 1rem;
+    }
+
+    .score {
+      background-color: azure;
+      padding: 2rem 2rem;
+    }
+
+    .score span:first-of-type {
+      color: hsl(229, 64%, 46%);
+    }
+
+    .score span:last-of-type  {
+      color: hsl(229, 25%, 31%);
+    }
+
+    #you-tie {
+      font-size: 3rem;
+
+    }
+
+    .modalText {
+      color: hsl(217, 16%, 45%);
+      font-size: 2rem;
+      letter-spacing: 3px;
+    }
+
+    .playAgain {
+      top: 74%;
+      left: 34%;
+    }
+
+    .hide {
+      display: none;
+    }
+    /*==================================== End of Game Styles ====================================*/
+
+    /*==================================== Common Styles ====================================*/
+    .score, .gameOptions {
+      border-radius: 20px;
+    }
+
+    #you-win, #you-lost, #you-tie {
+      font-size: 2rem;
+    }
+
+    .youPick, .enemyPick {
+      font-size: .8rem;
+      top: 40%;
+    }
+
+    .rules, .playAgain {
+      font-family: "Barlow Semi Condensed";
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: .5rem 2rem;
+      color: hsl(216, 13%, 53%);
+      background-color: hsl(237, 49%, 20%);
+      border: 2px solid hsl(217, 16%, 45%);
+      transition: box-shadow 1s ease-in-out,
+                  color 1s ease-in-out,
+                  font-weight 1s ease-in-out,
+                  border .5s ease-in-out;
+      border-radius: 10px;
+    }
+
+    .circleBtn, .circleBtn:hover, .circleBtn:active {
+      transition: opacity 1s ease-in-out,
+                  box-shadow 1s ease-in-out;
+                  transform: 1s ease-in-out;
+    }
+
+    .rules:hover, .playAgain:hover {
+      color: white;
+      background-color: hsl(217, 16%, 45%);
+      border: 2px solid hsl(237, 49%, 20%);
+      box-shadow: 0px 0px 4px 4px white;
+      transition: box-shadow 1s ease-in-out,
+                  color 1s ease-in-out,
+                  font-weight 1s ease-in-out,
+                  border .5s ease-in-out;
+    }
+
+    #rpsls, .rules:hover, .playAgain:hover, .score span:first-of-type {
+      font-weight: bold;
+    }
+
+    .you-rock, .enemy-rock {
+      background: url("../images/icon-rock.svg");
+      border: 1.5vh solid #DC2E4E;
+    }
+
+    .you-paper, .enemy-paper {
+      background: url("../images/icon-paper.svg");
+      border: 1.5vh solid #4865F4;
+    }
+
+    .you-scissors, .enemy-scissors {
+      background: url("../images/icon-scissors.svg");
+      border: 1.5vh solid #EC9E0E;
+    }
+
+    .gameBtnsBackground {
+      position: relative;
+    }
+
+    .you-rock, .you-paper, .you-scissors {
+      top: 46%;
+      left: 24%;
+    }
+
+    .enemy-rock, .enemy-paper, .enemy-scissors {
+      top: 46%;
+      right: 8%;
+    }
+
+    .you-rock, .enemy-rock, .you-paper, .enemy-paper, .you-scissors, .enemy-scissors {
+      background-size: 6vh;
+      height: 14vh;
+      width: 14vh;
+      border-radius: 50%;
+      background-position: center;
+      background-color: white;
+      box-shadow: 0 2px 40px white;
+    }
+
+    .you-rock, .enemy-rock, .you-paper, .enemy-paper, .you-scissors, .enemy-scissors,
+    .rock, .paper, .scissors, .gameBtnsBackground {
+      background-repeat: no-repeat;
+    }
+
+    .playAgain, #you-win, #you-lost, #you-tie, .youPick, .enemyPick,
+    .you-rock, .enemy-rock, .you-paper, .enemy-paper, .you-scissors, .enemy-scissors {
+      position: absolute;
+    }
+  /*===================================== End of Common Styles ======================================*/
+
+  /*==================================== Winning Animation Styles ====================================*/
+
+  .winner {
+    animation: winner 1s ease-in-out infinite;
+  }
+
+  .loser {
+    animation: loser 0.8s ease infinite;
+  }
+
+  @keyframes winner {
+    0%{
+      margin: 0;
+    }
+    50%{
+      margin-bottom: -2rem;
+    }
+    100% {
+      margin: 0;
+    }
+  }
+
+  @keyframes loser {
+    10%{
+      transform: rotate(20deg);
+    }
+    15%{
+      transform: rotate(40deg);
+    }
+    20%{
+      transform: rotate(60deg);
+    }
+    25% {
+      transform: rotate(80deg);
+    }
+    30% {
+      transform: rotate(100deg);
+    }
+    40% {
+      transform: rotate(120deg);
+    }
+    45% {
+      transform: rotate(140deg);
+    }
+    50% {
+      transform: rotate(160deg);
+    }
+    55% {
+      transform: rotate(180deg);
+    }
+    60% {
+      transform: rotate(200deg);
+    }
+    65% {
+      transform: rotate(220deg);
+    }
+    70% {
+      transform: rotate(240deg);
+    }
+    75% {
+      transform: rotate(260deg);
+    }
+    80% {
+      transform: rotate(280deg);
+    }
+    85% {
+      transform: rotate(300deg);
+    }
+    90% {
+      transform: rotate(320deg);
+    }
+    95% {
+      transform: rotate(340deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  /*==================================== End of Winning Animation Styles ====================================*/
+  }

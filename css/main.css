@@ -1,0 +1,444 @@
+/*======================================= Global Styles =======================================*/
+body {
+    background: radial-gradient(circle at 50%, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 2rem 4rem;
+}
+/*==================================== End of Global Styles ====================================*/
+
+/*==================================== Common Global Styles ====================================*/
+
+  #rpsls, body {
+    font-family: "Barlow Semi Condensed";
+  }
+/*================================= End of Common Global Styles =================================*/
+
+/*========================================= Game Styles =========================================*/
+
+  .modal-body img {
+    padding-bottom: 2rem;
+  }
+
+  .gameOptions {
+    margin-top: 2rem;
+    border: 6px solid hsl(217, 16%, 45%);
+  }
+
+  .gameButtons {
+    position: relative;
+    width: 70vw;
+    max-width: 320px;
+    aspect-ratio: 305 / 277;
+    margin: 60px auto;
+  }
+
+  .options {
+    padding: 1rem 1rem 0.5rem 1rem;
+  }
+
+  .score {
+    background-color: white;
+    padding: 2rem 2rem;
+  }
+
+  .score span:first-of-type {
+    color: hsl(229, 64%, 46%);
+  }
+
+  .score span:last-of-type  {
+    color: hsl(229, 25%, 31%);
+  }
+
+  .modalText {
+    color: hsl(217, 16%, 45%);
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .gameBtnsBackground {
+    position: absolute;
+    background: url("../assets/images/bg-triangle.svg") no-repeat center center;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  .rules {
+    display: block;
+    margin: 3rem auto;
+    z-index: 100;
+  }
+
+  .circleBtn {
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .circleBtn:hover {
+    box-shadow: 0 2px 40px white;
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 80%;
+  }
+
+  .circleBtn:active {
+    box-shadow: 0 2px 40px white;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 100%;
+  }
+
+  .paper {
+    background: url("../assets/images/icon-paper.svg");
+    border: clamp(6px, 1.5vw, 12px) solid #4865F4;
+    top: 2.7%;
+    left: 1.5%;
+  }
+
+  .scissors {
+    background: url("../assets/images/icon-scissors.svg");
+    border: clamp(6px, 1.5vw, 12px) solid #EC9E0E;
+    top: 2.7%;
+    left: 95.5%;
+  }
+
+  .rock {
+    background: url("../assets/images/icon-rock.svg");
+    border: clamp(6px, 1.5vw, 12px) solid #DC2E4E;
+    top: 91.7%;
+    left: 50%;
+  }
+
+  .hide {
+    display: none;
+  }
+  /*==================================== End of Game Styles ====================================*/
+
+  /*==================================== Common Styles ====================================*/
+  .score, .gameOptions {
+  border-radius: 20px;
+}
+
+  #you-win, #you-lost, #you-tie {
+  font-size: 4rem;
+}
+
+  .rules, .playAgain {
+  font-family: "Barlow Semi Condensed";
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: .5rem 2rem;
+  color: hsl(216, 13%, 53%);
+  background-color: hsl(237, 49%, 20%);
+  border: 2px solid hsl(217, 16%, 45%);
+  transition: box-shadow 1s ease-in-out,
+              color 1s ease-in-out,
+              font-weight 1s ease-in-out,
+              border .5s ease-in-out;
+  border-radius: 10px;
+}
+
+  .circleBtn, .circleBtn:hover, .circleBtn:active {
+    transition: opacity 1s ease-in-out,
+                box-shadow 1s ease-in-out;
+                transform: 1s ease-in-out;
+  }
+
+  .rules:hover, .playAgain:hover {
+  color: white;
+  background-color: hsl(217, 16%, 45%);
+  border: 2px solid hsl(237, 49%, 20%);
+  box-shadow: 0px 0px 4px 4px white;
+  transition: box-shadow 1s ease-in-out,
+              color 1s ease-in-out,
+              font-weight 1s ease-in-out,
+              border .5s ease-in-out;
+}
+
+  #rpsls, .rules:hover, .playAgain:hover, .score span:first-of-type {
+    font-weight: bold;
+  }
+
+  .you-rock, .enemy-rock {
+    background: url("../assets/images/icon-rock.svg");
+    border: 2.5vh solid #DC2E4E;
+}
+
+  .you-paper, .enemy-paper {
+    background: url("../assets/images/icon-paper.svg");
+    border: 2.5vh solid #4865F4;
+}
+
+  .you-scissors, .enemy-scissors {
+    background: url("../assets/images/icon-scissors.svg");
+    border: 2.5vh solid #EC9E0E;
+}
+
+  .rock, .paper, .scissors  {
+  position: absolute;
+  background-size: 40%;
+  width: clamp(80px, 20vw, 130px);
+  aspect-ratio: 1 / 1;
+  height: auto;
+  border-radius: 50%;
+  background-position: center;
+  background-color: white;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+  .you-rock, .enemy-rock, .you-paper, .enemy-paper, .you-scissors, .enemy-scissors {
+    background-size: 6vh;
+    height: 20vh;
+    width: 20vh;
+    border-radius: 50%;
+    background-position: center;
+    background-color: white;
+    box-shadow: 0 2px 40px white;
+  }
+
+  .you-rock, .enemy-rock, .you-paper, .enemy-paper, .you-scissors, .enemy-scissors,
+  .rock, .paper, .scissors , .gameBtnsBackground {
+    background-repeat: no-repeat;
+  }
+
+/*==================================== End of Common Styles ====================================*/
+
+/*==================================== Animation Styles ====================================*/
+
+.winner {
+  animation: winner 1s ease-in-out infinite;
+}
+
+.tie {
+  animation: tie 1s ease-in-out infinite;
+}
+
+.loser {
+  animation: loser 1s ease infinite;
+}
+
+@keyframes winner {
+  0%{
+    transform: scale(1);
+    box-shadow: 0 2px 60px white;
+  }
+  50%{
+    transform: scale(1.2);
+    box-shadow: 0 2px 60px magenta;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 2px 60px white;
+  }
+}
+
+@keyframes tie {
+  0%{
+    transform: scale(1);
+    opacity: 100%;
+    box-shadow: 0 2px 60px white;
+  }
+  50%{
+    transform: scale(0.8);
+    opacity: 50%;
+    box-shadow: 0 2px 60px orange;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 100%;
+    box-shadow: 0 2px 60px white;
+  }
+}
+
+@keyframes loser {
+  10%{
+    transform: rotate(20deg);
+  }
+  15%{
+    transform: rotate(40deg);
+  }
+  20%{
+    transform: rotate(60deg);
+  }
+  25% {
+    transform: rotate(80deg);
+  }
+  30% {
+    transform: rotate(100deg);
+  }
+  40% {
+    transform: rotate(120deg);
+  }
+  45% {
+    transform: rotate(140deg);
+  }
+  50% {
+    transform: rotate(160deg);
+    box-shadow: 0 2px 60px red;
+  }
+  55% {
+    transform: rotate(180deg);
+  }
+  60% {
+    transform: rotate(200deg);
+  }
+  65% {
+    transform: rotate(220deg);
+  }
+  70% {
+    transform: rotate(240deg);
+  }
+  75% {
+    transform: rotate(260deg);
+  }
+  80% {
+    transform: rotate(280deg);
+  }
+  85% {
+    transform: rotate(300deg);
+  }
+  90% {
+    transform: rotate(320deg);
+  }
+  95% {
+    transform: rotate(340deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 0 2px 60px white;
+  }
+}
+/*==================================== End of Animation Styles ====================================*/
+
+@media (max-width: 576px) {
+
+  body {
+    margin: 0;
+  }
+
+  .mediaQueryBtn {
+    transform: scale(0.5)
+  }
+
+  #you-tie  {
+    top: 17rem;
+  }
+
+  .options {
+    display: none;
+  }
+
+  .gamePlay {
+    width: 80%;
+  }
+
+  .gameButtons {
+    position: relative;
+    top: 20px;
+  }
+
+  #playAgain {
+    position: absolute;
+    top: 78%;
+    left: 25%;
+    width: 50%;
+  }
+
+  .rules {
+    position: relative;
+    top: 0rem;
+    left: 0rem;
+  }
+
+/*==================================== Common Styles ====================================*/
+
+#you-win, #you-lost, #you-tie {
+  font-size: 2rem;
+  position: relative;
+  top: 16rem;
+  left: 0rem;
+}
+
+/*==================================== End of Common Styles ====================================*/
+
+/*==================================== Animation Styles ====================================*/
+
+  .winner {
+    animation: winner 2s ease-in-out infinite;
+  }
+
+  .tie {
+    animation: tie 2s ease-in-out infinite;
+  }
+
+  .loser {
+    animation: loser 2s ease-in-out infinite;
+  }
+
+
+
+  @keyframes winner {
+    0%{
+      transform: scale(0.5);
+      box-shadow: 0 2px 60px white;
+    }
+    50%{
+      transform: scale(0.7);
+      box-shadow: 0 2px 60px magenta;
+    }
+    100% {
+      transform: scale(0.5);
+      box-shadow: 0 2px 60px white;
+    }
+  }
+
+
+  @keyframes tie {
+    0%{
+      transform: scale(0.5);
+      opacity: 100%;
+      box-shadow: 0 2px 60px white;
+    }
+    50%{
+      transform: scale(0.4);
+      opacity: 50%;
+      box-shadow: 0 2px 60px orange;
+    }
+    100% {
+      transform: scale(0.5);
+      opacity: 100%;
+      box-shadow: 0 2px 60px white;
+    }
+  }
+
+    @keyframes loser {
+    0%{
+      box-shadow: 0 2px 40px white;
+    }
+    50%{
+      box-shadow: 0 2px 40px red;
+    }
+    100%{
+      box-shadow: 0 2px 40px white;
+    }
+  }
+  /*==================================== End of Animation Styles ====================================*/
+}
+
+/*===================================== Developer Footer ======================================*/
+.developer-footer {
+  width: 100%;
+  color: hsl(217, 16%, 45%);
+  font-family: "Barlow Semi Condensed", sans-serif;
+  letter-spacing: 1px;
+}
+.developer-footer strong {
+  color: hsl(216, 13%, 53%);
+}
+/*===================================== End Developer Footer ======================================*/
